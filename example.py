@@ -44,6 +44,7 @@ while running:
         key = "down"
     elif gaze.is_center:
         text = "Looking center"
+        key = "None"
 
         #Pygame:
     # poll for events
@@ -54,22 +55,21 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")
 
-    pygame.draw.circle(screen, "red", player_pos, 40)
+    pygame.draw.circle(screen, "red", player_pos, 20)
 
-    keys = pygame.key.get_pressed()
     if key == "up":
-        player_pos.y -= 300 * dt
+        player_pos.y -= 150 * dt
         print("up")
     if key == "down":
-        player_pos.y += 300 * dt
+        player_pos.y += 150 * dt
         print("down")
     if key == "left":
-        player_pos.x -= 300 * dt
+        player_pos.x -= 150 * dt
         print("left")
     if key == "right":
-        player_pos.x += 300 * dt
+        player_pos.x += 150 * dt
         print("right")
-    else:
+    elif key == "None":
         print("not moving")
 
     # flip() the display to put your work on screen
@@ -90,7 +90,7 @@ while running:
     cv2.putText(frame, "Left pupil:  " + str(left_pupil), (90, 130), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
     cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
 
-    # cv2.imshow("Demo", frame)
+    cv2.imshow("Demo", frame)
 
     if cv2.waitKey(1) == 27:
         break
