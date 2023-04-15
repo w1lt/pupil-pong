@@ -7,7 +7,7 @@ import pygame
 import cv2
 from gaze_tracking import GazeTracking
 
-x = 1000
+x = 1001
 y = 500
 
 # pygame setup
