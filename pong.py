@@ -120,7 +120,7 @@ class PlayerPaddle(object):
             self.rect.bottom = self.screensize[1]-1
         print(self.rect.bottom)
         print(f"center y is:{self.centery}")
-        print(f"player center is ")
+        print(f"player bottom is {self.rect.bottom}")
         
 
     def render(self, screen):
@@ -158,15 +158,17 @@ def main():
 
         if gaze.is_up():
             #print("Looking up")
-            if player_paddle.centery <= player_paddle.screensize[1] and player_paddle.centery > 0:
+            if player_paddle.centery > 0:
                 player_paddle.direction = -1
             else:
                 player_paddle.direction = 0
         elif gaze.is_down():
-            if player_paddle.centery < player_paddle.screensize[1]-1 and player_paddle.centery > 0:
+            if player_paddle.centery < player_paddle.screensize[1]:
                 player_paddle.direction = 1
             else:
                 player_paddle.direction = 0
+        else:
+            player_paddle.direction = 0
             #print("Looking down")
 
         for event in pygame.event.get():
