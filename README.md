@@ -6,11 +6,11 @@ Welcome to [Pupil Pong](http://pupilpong.tech/), the revolutionary new version o
 Our technology uses advanced eye-tracking software to accurately capture a player's eye movements and translate them into real-time gameplay. This means that every move, every block, and every point is controlled entirely by the player's eyes.
 
 ## 🌐 About the Project
-Within _Pupil Pong_, we utilize Eye Tracking to detect the movements of the pupil in relation to the eye. Using the horizontal and vertical ratios between the pupil and the edges of the eyeball, our game can detect which direction the player wants to move their right paddle and move it in that direction without needing to physically interact with a device _at all_.
+Within _Pupil Pong_, we utilize Eye Tracking to detect the movements of the pupil in relation to the eye. Using the horizontal and vertical ratios between the pupil and the edges of the eyeball👁️, our game can detect which direction the player wants to move their right paddle and move it in that direction without needing to physically interact with a device _at all_.
 
 During the initial menu of our game, we utilize voice commands that allow the user to easily choose between three options: play game, which starts the game; about, which displays the creators and teaches the player how to play the game; and quit, which exits the program entirely.
 
-Our game is made using _Python_ and is Object-Oriented. We implemented our pong like game using the Python game engine Pygame. We learned how to combine multiple different libraries together to create a seamless experience. In addition, we got more comfortable using _Github_ for version control and collaboration, which made sharing our code much easier and quicker. Last but not least, we gained more experience using _pip_ and _homebrew_ to install new libraries on our computers
+Our game is made using _Python_ and is Object-Oriented. We implemented our pong like game using the _Python_ game engine _Pygame_. We learned how to combine multiple different libraries together to create a seamless experience. In addition, we got more comfortable using _Github_ for version control and collaboration, which made sharing our code much easier and quicker. Last but not least, we gained more experience using _pip_ and _homebrew_ to install new libraries on our computers
 
 
 
