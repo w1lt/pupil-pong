@@ -1,12 +1,18 @@
 # PupilPong
 
-PupilPong is a Python library for dealing with word pluralization.
+Welcome to PupilPong, the revolutionary new version of the classic arcade game Pong! Our company has developed a cutting-edge system that allows players to control the game using only their eyes.
+
+Our technology uses advanced eye-tracking software to accurately capture a player's eye movements and translate them into real-time gameplay. This means that every move, every block, and every point is controlled entirely by the player's eyes.
 
 ## Installation
 
 
 ```bash
 pip install -r requirements
+brew install flac
+brew install Pillow
+brew install autoaudio
+brew install pyaudio
 ```
 
 ## Usage
