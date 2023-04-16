@@ -1,11 +1,20 @@
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) 
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![GrubHub](https://img.shields.io/badge/Grubhub-F63440?style=for-the-badge&logo=Grubhub&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)![GrubHub](https://img.shields.io/badge/Grubhub-F63440?style=for-the-badge&logo=Grubhub&logoColor=white)
 # 🏓 Pupil Pong // HackKU 2023 🏓
 
 Welcome to [Pupil Pong](http://pupilpong.tech/), the revolutionary new version of the classic arcade game Pong! Our company has developed a cutting-edge system that allows players to control the game using only their eyes.
 
 Our technology uses advanced eye-tracking software to accurately capture a player's eye movements and translate them into real-time gameplay. This means that every move, every block, and every point is controlled entirely by the player's eyes.
+
+## 🌐 About the Project
+Within Pupil Pong, we utilize Eye Tracking software to detect the movements of the pupil in relation to the eye. Using the horizontal and vertical ratios between the pupil and the edges of the eyeball, our game can detect which direction the player wants to move their right paddle and move it in that direction without needing to physically interact with a device at all.
+
+During the initial menu of our game, we utilize voice commands that allow the user to easily choose between three options: play game, which starts the game; about, which displays the creators and teaches the player how to play the game; and quit, which exits the program entirely.
+
+Our game is made using Python and is Object-Oriented. We implemented our pong like game using the Python game engine Pygame. We learned how to combine multiple different libraries together to create a seamless experience. In addition, we got more comfortable using Github for version control and collaboration, which made sharing our code much easier and quicker. Last but not least, we gained more experience using pip and homebrew to install new libraries on our computers
+
+
+
+
 
 ## 👨‍💻 Installation
 
