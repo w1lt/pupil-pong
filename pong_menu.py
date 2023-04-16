@@ -1,6 +1,8 @@
 import pygame
 import pygame_menu
 import pong
+import speech_recognition as sr
+import threading
 
 #MENU_BACKGROUND_IMAGE = pygame_menu.baseimage.BaseImage(
 #    image_path='menu_image.png',
@@ -43,6 +45,32 @@ def main_background():
     BACKGROUND_IMAGE = pygame.image.load('assets/menu_image.png').convert()
     surface.blit(BACKGROUND_IMAGE, (0,0))
 
+def takecommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print('listening....')
+        r.pause_threshold = 1
+        audio = r.listen(source, timeout=1000, phrase_time_limit=4)
+        
+    try:
+        print("Recognizing....")
+        query = r.recognize_google(audio, language= 'en-in')
+        print("You said: {}.".format(query))
+        return query
+
+    except Exception as e:
+        print("voice not recognized")  
+def menu_voice():
+        ans = takecommand()
+        if "start" in ans:
+            run_game
+            print("starting game")
+        elif "help" in ans:
+            about_menu
+            print("help")
+        elif "quit" in ans:
+            pygame_menu.events.EXIT
+            print("quitting")
 
 def menu_loop():
     pygame.init()
@@ -97,27 +125,32 @@ def menu_loop():
         onclose=pygame_menu.events.EXIT,
         title='Pupil Pong'
     )
-
     main_menu.add.button('Start Game', run_game)
-    main_menu.add.button('Help Menu', about_menu)
+    main_menu.add.button('Help Menu', about_menu )
     main_menu.add.button('Quit', pygame_menu.events.EXIT)
 
     running = True
     while running:
-
+        
         clock.tick(FPS)
 
         main_background()
-
+        
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
                 running = False
+        
 
         if main_menu.is_enabled():
             main_menu.mainloop(surface, main_background)
+            
 
         pygame.display.flip()
+        
+        
+        
+
 
     exit()
 
