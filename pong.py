@@ -147,6 +147,10 @@ def main():
     running = True
 
     while running:
+        ai_paddle.render(screen)
+        player_paddle.render(screen)
+        pong.render(screen)
+        
             # We get a new frame from the webcam
         _, frame = webcam.read()
 
