@@ -60,6 +60,7 @@ def takecommand():
 
     except Exception as e:
         print("voice not recognized")  
+
 def menu_voice():
         ans = takecommand()
         if "start" in ans:
@@ -69,8 +70,8 @@ def menu_voice():
             about_menu
             print("help")
         elif "quit" in ans:
-            pygame_menu.events.EXIT
             print("quitting")
+            pygame_menu.events.EXIT
 
 def menu_loop():
     pygame.init()
@@ -91,7 +92,7 @@ def menu_loop():
         title_background_color=MENU_TITLE_COLOR,
     )
 
-    other_menu_theme = pygame_menu.themes.Theme(
+    about_menu_theme = pygame_menu.themes.Theme(
         selection_color=COLOR_WHITE,
         widget_font=MENU_FONT,
         title_font_size=TILE_SIZE,
@@ -99,13 +100,13 @@ def menu_loop():
         title_font=MENU_FONT,
         title_bar_style=TITLE_STYLE,
         widget_font_color=COLOR_BLACK,
-        widget_font_size=int(TILE_SIZE*0.5),
+        widget_font_size=int(TILE_SIZE*0.60),
         background_color=MENU_BACKGROUND_COLOR,
         title_background_color=MENU_TITLE_COLOR
     )
 
     about_menu = pygame_menu.Menu(
-        theme=other_menu_theme,
+        theme=about_menu_theme,
         height=int(WINDOW_SIZE[1] * WINDOW_SCALE),
         width=int(WINDOW_SIZE[0] * WINDOW_SCALE),
         overflow=False,
