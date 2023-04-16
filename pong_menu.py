@@ -2,11 +2,6 @@ import pong
 import cv2
 import speech_recognition as sr
 gamestart = False
-# path
-# path
-import cv2
-  
-# path
 path = "assets/main.png"
 image = cv2.imread(path)
 window_name = 'image'
