@@ -134,7 +134,7 @@ def main():
 
     global pointcounter
 
-    screensize = (640,480)
+    screensize = (500,480)
 
     screen = pygame.display.set_mode(screensize)
 
