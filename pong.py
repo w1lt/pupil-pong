@@ -215,7 +215,7 @@ def main():
         cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
 
         cv2.imshow("Demo", frame)
-        img = font.render(f"Score: {str(pointcounter)}", True, (255, 255, 255))
+        img = font.render(f"Hits: {str(pointcounter)}", True, (255, 255, 255))
         rect = img.get_rect()
         pygame.draw.rect(img, (0, 0, 0), rect, 1)
         screen.blit(img, (240, 22))
