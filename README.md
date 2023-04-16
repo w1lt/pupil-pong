@@ -24,9 +24,9 @@ python3 pong_menu.py
 
 ## Contributors
 
-Will Whitehead @w1lt
-Joshua Lee @joshualee8
-Sabastian M 
+-Will Whitehead [@w1lt](https://github.com/w1lt)
+*Joshua Lee [@joshualee8](https://github.com/joshualee8)
++Sabastian Maciorowski [@smskio](https://github.com/smskio)
 
 Please make sure to update tests as appropriate.
 
