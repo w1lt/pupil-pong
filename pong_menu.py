@@ -1,6 +1,6 @@
 import pygame
 import pygame_menu
-#import pong
+import pong
 
 #MENU_BACKGROUND_IMAGE = pygame_menu.baseimage.BaseImage(
 #    image_path='menu_image.png',
@@ -34,6 +34,8 @@ clock = None
 show_path = True
 surface = pygame.display.set_mode(WINDOW_SIZE)
 
+def run_game():
+    pong.main()
 
 def main_background():
     global surface
@@ -96,7 +98,7 @@ def menu_loop():
         title='Pupil Pong'
     )
 
-    main_menu.add.button('Start Game')
+    main_menu.add.button('Start Game', run_game)
     main_menu.add.button('Help Menu', about_menu)
     main_menu.add.button('Quit', pygame_menu.events.EXIT)
 

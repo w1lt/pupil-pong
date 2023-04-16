@@ -10,9 +10,12 @@ pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
 pygame.font.init() # you have to call this at the start, 
                    # if you want to use this module.
-my_font = pygame.font.SysFont('Comic Sans MS', 30)
 
 pointcounter = 0
+
+sysfont = pygame.font.get_default_font()
+font = pygame.font.SysFont(None, 48)
+print('system font :', sysfont)
 
 class Pong(object):
     def __init__(self, screensize):
@@ -145,6 +148,7 @@ def main():
 
     screen = pygame.display.set_mode(screensize)
 
+
     clock = pygame.time.Clock()
 
     pong = Pong(screensize)
@@ -213,17 +217,20 @@ def main():
         pygame.display.flip()
         cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
 
-        cv2.imshow("Demo", frame)
-        #text_surface = my_font.render(pointcounter, False, (0, 0, 0))
-        #screen.blit(text_surface, (0,0))
-
+        #cv2.imshow("Demo", frame)
+        img = font.render(f"Score: {str(pointcounter)}", True, (255, 255, 255))
+        rect = img.get_rect()
+        pygame.draw.rect(img, (0, 0, 0), rect, 1)
+        screen.blit(img, (240, 22))
+        pygame.display.update()
 
         if cv2.waitKey(1) == 27:
             break
-
+        pygame.display.set_caption("Pupil Pong")
         ai_paddle.render(screen)
         player_paddle.render(screen)
         pong.render(screen)
+
    
     webcam.release()
     cv2.destroyAllWindows()
@@ -245,5 +252,3 @@ def takecommand():
 
     except Exception as e:
         print("voice not recognized")  
-if takecommand() == "start game":
-    main()
