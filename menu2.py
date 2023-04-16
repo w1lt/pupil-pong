@@ -1,4 +1,3 @@
-import pygame
 import pong
 import cv2
 import speech_recognition as sr
@@ -37,29 +36,28 @@ def takecommand():
         print("voice not recognized")  
 def menu_voice():
         ans = takecommand()
-        if "start" in ans:
+        if "play" in ans:
             gamestart = True
             cv2.destroyAllWindows()
             pong.main()
             print("starting game")
-        elif "help" in ans:
-            path = "assets/help.png"
+        elif "about" in ans:
+            cv2.destroyAllWindows()
+            path = "assets/about.png"
             image = cv2.imread(path)
             window_name = 'image'
             cv2.imshow(window_name, image)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
+            cv2.waitKey(1000)
         elif "return" in ans:
+            cv2.destroyAllWindows()
             path = "assets/main.png"
             image = cv2.imread(path)
             window_name = 'image'
             cv2.imshow(window_name, image)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
+            cv2.waitKey(1000)
         elif "quit" in ans:
             gamestart = True
             print("quitting")
             cv2.destroyAllWindows()
-
 while gamestart == False:
-     menu_voice()
+    menu_voice()
