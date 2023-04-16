@@ -4,6 +4,9 @@ gaze = GazeTracking()
 webcam = cv2.VideoCapture(0)
 import pygame
 from pygame.locals import *
+pygame.font.init() # you have to call this at the start, 
+                   # if you want to use this module.
+my_font = pygame.font.SysFont('Comic Sans MS', 30)
 
 pointcounter = 0
 
@@ -154,15 +157,17 @@ def main():
         gaze.refresh(frame)
 
         frame = gaze.annotated_frame()
+        text = ""
         clock.tick(64)
 
         if gaze.is_up():
-            #print("Looking up")
+            text = "looking up"
             if player_paddle.centery > 0:
                 player_paddle.direction = -1
             else:
                 player_paddle.direction = 0
         elif gaze.is_down():
+            text = "looking up"
             if player_paddle.centery < player_paddle.screensize[1]:
                 player_paddle.direction = 1
             else:
@@ -198,6 +203,23 @@ def main():
         pong.render(screen)
 
         pygame.display.flip()
+        cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
+
+        left_pupil = gaze.pupil_left_coords()
+        right_pupil = gaze.pupil_right_coords()
+        cv2.putText(frame, "Left pupil:  " + str(left_pupil), (90, 130), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
+        cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
+
+        cv2.imshow("Demo", frame)
+        text_surface = my_font.render('Some Text', False, (0, 0, 0))
+        screen.blit(text_surface, (0,0))
+
+
+        if cv2.waitKey(1) == 27:
+            break
+   
+    webcam.release()
+    cv2.destroyAllWindows()
 
     pygame.quit()
 
