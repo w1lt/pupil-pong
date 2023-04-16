@@ -21,6 +21,7 @@ To run the game, enter the following into the root directory:
 ```bash
 python3 pong_menu.py
 ```
+Then, speak which command you would like to run, and begin playing.
 
 ## ✨ Contributors
 
