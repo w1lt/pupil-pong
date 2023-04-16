@@ -27,8 +27,8 @@ class Pong(object):
 
         self.direction = [1,1]
         #speed of ball
-        self.speedx = 10
-        self.speedy = 10
+        self.speedx = 15
+        self.speedy = 15
 
         self.hit_edge_left = False
         self.hit_edge_right = False
@@ -79,7 +79,7 @@ class AIPaddle(object):
 
         self.color = (255,255,255)
         #ai paddle speed
-        self.speed = 12
+        self.speed = 18
 
     def update(self, pong):
         if pong.rect.top < self.rect.top:
@@ -110,7 +110,7 @@ class PlayerPaddle(object):
         self.color = (255,255,255)
 
         #player paddle speed
-        self.speed = 20
+        self.speed = 30
         self.direction = 0
 
         self.hit_edge_top = False
@@ -140,7 +140,7 @@ def main():
 
     global pointcounter
 
-    screensize = (500,480)
+    screensize = (600,480)
 
     screen = pygame.display.set_mode(screensize)
 
@@ -211,11 +211,6 @@ def main():
 
         pygame.display.flip()
         cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
-
-        left_pupil = gaze.pupil_left_coords()
-        right_pupil = gaze.pupil_right_coords()
-        cv2.putText(frame, "Left pupil:  " + str(left_pupil), (90, 130), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
-        cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
 
         cv2.imshow("Demo", frame)
         #text_surface = my_font.render(pointcounter, False, (0, 0, 0))
