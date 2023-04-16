@@ -15,7 +15,6 @@ pointcounter = 0
 
 sysfont = pygame.font.get_default_font()
 font = pygame.font.SysFont(None, 48)
-print('system font :', sysfont)
 
 class Pong(object):
     def __init__(self, screensize):
