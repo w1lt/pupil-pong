@@ -22,10 +22,11 @@ brew install pyaudio
 python3 pong_menu.py
 ```
 
-## Contributing
+## Contributors
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Will Whitehead @w1lt
+Joshua Lee @joshualee8
+Sabastian M 
 
 Please make sure to update tests as appropriate.
 
