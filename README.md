@@ -45,7 +45,7 @@ Then, speak which command you would like to run, and begin playing.
 * Joshua Lee [@joshualee8](https://github.com/joshualee8)
 + Sabastian Maciorowski [@smskio](https://github.com/smskio)
 
-We all had a blast working on **Pupil Pong**. With all of us being freshman at KU, we thoroughly enjoyed our first hackathon ever. In addition to being all of our firsts hackathons, it was also our first time pulling an all nighter, which was admittedly part of the fun. We hope you all enjoy our project, thank your for checking it out. 
+We all had a blast working on **Pupil Pong**. With all of us being freshman at KU, we thoroughly enjoyed our first hackathon ever.
 
 
 ## 📄 License
