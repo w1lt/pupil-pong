@@ -44,3 +44,4 @@ def main():
     show_menu(main_img)
     while True:
         menu_voice()
+main()
