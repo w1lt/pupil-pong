@@ -218,8 +218,8 @@ def main():
         cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
 
         cv2.imshow("Demo", frame)
-        text_surface = my_font.render(pointcounter, False, (0, 0, 0))
-        screen.blit(text_surface, (0,0))
+        #text_surface = my_font.render(pointcounter, False, (0, 0, 0))
+        #screen.blit(text_surface, (0,0))
 
 
         if cv2.waitKey(1) == 27:
