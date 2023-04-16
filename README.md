@@ -17,7 +17,7 @@ brew install pyaudio
 ```
 
 ## 🎮 Usage
-
+To run the game, enter the following into the root directory:
 ```bash
 python3 pong_menu.py
 ```
