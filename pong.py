@@ -37,8 +37,10 @@ class Pong(object):
 
         if self.rect.top <= 0:
             self.direction[1] = 1
+            self.hit_edge_top = True
         elif self.rect.bottom >= self.screensize[1]-1:
             self.direction[1] = -1
+            self.hit_edge_bottom = True
 
         if self.rect.right >= self.screensize[0]-1:
             self.hit_edge_right = True
@@ -105,6 +107,9 @@ class PlayerPaddle(object):
         self.speed = 20
         self.direction = 0
 
+        self.hit_edge_top = False
+        self.hit_edge_bottom = False
+
     def update(self):
         self.centery += self.direction*self.speed
 
@@ -113,6 +118,10 @@ class PlayerPaddle(object):
             self.rect.top = 0
         if self.rect.bottom > self.screensize[1]-1:
             self.rect.bottom = self.screensize[1]-1
+        print(self.rect.bottom)
+        print(f"center y is:{self.centery}")
+        print(f"player center is ")
+        
 
     def render(self, screen):
         pygame.draw.rect(screen, self.color, self.rect, 0)
@@ -148,29 +157,23 @@ def main():
         clock.tick(64)
 
         if gaze.is_up():
-            print("Looking up")
-            player_paddle.direction = -1
+            #print("Looking up")
+            if player_paddle.centery <= player_paddle.screensize[1] and player_paddle.centery > 0:
+                player_paddle.direction = -1
+            else:
+                player_paddle.direction = 0
         elif gaze.is_down():
-            player_paddle.direction = 1
-            print("Looking down")
-        elif gaze.is_center:
-            print("Looking center")
-            player_paddle.direction = 0
+            if player_paddle.centery < player_paddle.screensize[1]-1 and player_paddle.centery > 0:
+                player_paddle.direction = 1
+            else:
+                player_paddle.direction = 0
+            #print("Looking down")
 
         for event in pygame.event.get():
             if event.type == QUIT:
                 running = False
 
-            if event.type == KEYDOWN:
-                if event.key == K_UP:
-                    player_paddle.direction = -1
-                elif event.key == K_DOWN:
-                    player_paddle.direction = 1
-            if event.type == KEYUP:
-                if event.key == K_UP and player_paddle.direction == -1:
-                    player_paddle.direction = 0
-                elif event.key == K_DOWN and player_paddle.direction == 1:
-                    player_paddle.direction = 0
+
 
 
         ai_paddle.update(pong)
