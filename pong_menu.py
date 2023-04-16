@@ -38,7 +38,7 @@ surface = pygame.display.set_mode(WINDOW_SIZE)
 def main_background():
     global surface
     #surface.fill(COLOR_BACKGROUND)
-    BACKGROUND_IMAGE = pygame.image.load('menu_image.png').convert()
+    BACKGROUND_IMAGE = pygame.image.load('assets/menu_image.png').convert()
     surface.blit(BACKGROUND_IMAGE, (0,0))
 
 
