@@ -53,7 +53,10 @@ def menu_voice():
             cv2.waitKey(1000)
         elif "quit" in ans:
             gamestart = True
-            print("quitting")
-            cv2.destroyAllWindows()
+            exit()
 while gamestart == False:
     menu_voice()
+
+def main():
+    while gamestart == False:
+        menu_voice()

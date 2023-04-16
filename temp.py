@@ -12,6 +12,9 @@ pygame.font.init() # you have to call this at the start,
                    # if you want to use this module.
 
 
+
+
+
 pointcounter = 0
 
 sysfont = pygame.font.get_default_font()
