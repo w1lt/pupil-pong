@@ -15,16 +15,14 @@ class Pong(object):
 
         self.radius = 8
 
-        self.rect = pygame.Rect(self.centerx-self.radius,
-                            self.centery-self.radius,
-                            self.radius*2, self.radius*2)
+        self.rect = pygame.Rect(self.centerx-self.radius, self.centery-self.radius, self.radius*2, self.radius*2)
 
         self.color = (255,255,255)
 
         self.direction = [1,1]
         #speed of ball
-        self.speedx = 5
-        self.speedy = 5
+        self.speedx = 10
+        self.speedy = 10
 
         self.hit_edge_left = False
         self.hit_edge_right = False
@@ -73,7 +71,7 @@ class AIPaddle(object):
 
         self.color = (255,255,255)
         #ai paddle speed
-        self.speed = 6
+        self.speed = 12
 
     def update(self, pong):
         if pong.rect.top < self.rect.top:
@@ -104,7 +102,7 @@ class PlayerPaddle(object):
         self.color = (255,255,255)
 
         #player paddle speed
-        self.speed = 10
+        self.speed = 20
         self.direction = 0
 
     def update(self):
