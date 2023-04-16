@@ -4,6 +4,9 @@ gaze = GazeTracking()
 webcam = cv2.VideoCapture(0)
 import pygame
 from pygame.locals import *
+import pygame.freetype
+pygame.font.init() # you have to call this at the start, 
+                   # if you want to use this module.
 pygame.font.init() # you have to call this at the start, 
                    # if you want to use this module.
 my_font = pygame.font.SysFont('Comic Sans MS', 30)
@@ -171,7 +174,7 @@ def main():
             else:
                 player_paddle.direction = 0
         elif gaze.is_down():
-            text = "looking up"
+            text = "looking down"
             if player_paddle.centery < player_paddle.screensize[1]:
                 player_paddle.direction = 1
             else:
@@ -215,7 +218,7 @@ def main():
         cv2.putText(frame, "Right pupil: " + str(right_pupil), (90, 165), cv2.FONT_HERSHEY_DUPLEX, 0.9, (147, 58, 31), 1)
 
         cv2.imshow("Demo", frame)
-        text_surface = my_font.render('Some Text', False, (0, 0, 0))
+        text_surface = my_font.render(pointcounter, False, (0, 0, 0))
         screen.blit(text_surface, (0,0))
 
 
