@@ -5,6 +5,7 @@ webcam = cv2.VideoCapture(0)
 import pygame
 from pygame.locals import *
 import pygame.freetype
+import speech_recognition as sr
 pygame.font.init() # you have to call this at the start, 
                    # if you want to use this module.
 pygame.font.init() # you have to call this at the start, 
@@ -229,5 +230,20 @@ def main():
 
     pygame.quit()
 
+def takecommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print('listening....')
+        r.pause_threshold = 1
+        audio = r.listen(source, timeout=1000, phrase_time_limit=4)
+        
+    try:
+        print("Recognizing....")
+        query = r.recognize_google(audio, language= 'en-in')
+        print("You said: {}.".format(query))
+        return query
 
-main()
+    except Exception as e:
+        print("voice not recognized")  
+if takecommand() == "start game":
+    main()
