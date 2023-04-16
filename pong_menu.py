@@ -123,7 +123,6 @@ def menu_loop():
         theme=menu_theme,
         height=int(WINDOW_SIZE[1] * WINDOW_SCALE),
         width=int(WINDOW_SIZE[0] * WINDOW_SCALE),
-        onclose=pygame_menu.events.EXIT,
         title='Pupil Pong'
     )
     main_menu.add.button('Start Game', run_game)
