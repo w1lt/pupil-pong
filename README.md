@@ -5,7 +5,9 @@ Welcome to [Pupil Pong](http://pupilpong.tech/), the revolutionary new version o
 
 Our technology uses advanced eye-tracking software to accurately capture a player's eye movements and translate them into real-time gameplay. This means that every move, every block, and every point is controlled entirely by the player's eyes.
 ## Demo
-{% include youtube.html id="jkagCdjfl1k" %}  
+[![Final video of fixing issues in your code in VS Code]
+(https://img.youtube.com/vi/jkagCdjfl1k/maxresdefault.jpg)]
+(https://www.youtube.com/watch?v=jkagCdjfl1k)
 
 
 ## 🌐 About the Project
