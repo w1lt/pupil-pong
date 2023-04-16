@@ -224,6 +224,10 @@ def main():
 
         if cv2.waitKey(1) == 27:
             break
+
+        ai_paddle.render(screen)
+        player_paddle.render(screen)
+        pong.render(screen)
    
     webcam.release()
     cv2.destroyAllWindows()
