@@ -30,6 +30,7 @@ def takecommand():
 def menu_voice():
         ans = takecommand()
         if "play" in ans:
+            cv2.destroyAllWindows()
             print("Starting game")
             pong.main()
         elif "about" in ans:
@@ -37,7 +38,7 @@ def menu_voice():
         elif "return" in ans:
             show_menu(main_img)
         elif "quit" in ans:
-            quit()
+            exit()
 
 def main():
     while True:
