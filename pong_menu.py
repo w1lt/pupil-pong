@@ -35,7 +35,6 @@ def menu_voice():
             pong.main()
             exit()
             cv2.destroyAllWindows()
-            pong.main()
             print("starting game")
         elif "about" in ans:
             cv2.destroyAllWindows()

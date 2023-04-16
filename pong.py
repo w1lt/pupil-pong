@@ -128,9 +128,6 @@ class PlayerPaddle(object):
             self.rect.top = 0
         if self.rect.bottom > self.screensize[1]-1:
             self.rect.bottom = self.screensize[1]-1
-        print(self.rect.bottom)
-        print(f"center y is:{self.centery}")
-        print(f"player bottom is {self.rect.bottom}")
         
 
     def render(self, screen):
@@ -235,7 +232,8 @@ def main():
     webcam.release()
     cv2.destroyAllWindows()
     pygame.quit()
-    menu_main()
+    exec(open('pong_menu.py').read())
+    exit()
 
 def takecommand():
     r = sr.Recognizer()
@@ -252,61 +250,3 @@ def takecommand():
 
     except Exception as e:
         print("voice not recognized")  
-
-gamestart = False
-path = "assets/main.png"
-image = cv2.imread(path)
-window_name = 'image'
-cv2.imshow(window_name, image)
-cv2.waitKey(1000)
-cv2.destroyAllWindows()
-  
-
-def show_menu(image):
-     cv2.imshow(window_name, image)
-
-  
-def takecommand():
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print('listening....')
-        r.pause_threshold = 1
-        audio = r.listen(source, timeout=1000, phrase_time_limit=4)
-        
-    try:
-        print("Recognizing....")
-        query = r.recognize_google(audio, language= 'en-in')
-        print("You said: {}.".format(query))
-        return query
-
-    except Exception as e:
-        print("voice not recognized")  
-def menu_voice():
-        ans = takecommand()
-        if "play" in ans:
-            cv2.destroyAllWindows()
-            print("starting game")
-            main()
-        elif "about" in ans:
-            cv2.destroyAllWindows()
-            path = "assets/about.png"
-            image = cv2.imread(path)
-            window_name = 'image'
-            cv2.imshow(window_name, image)
-            cv2.waitKey(1000)
-        elif "return" in ans:
-            cv2.destroyAllWindows()
-            path = "assets/main.png"
-            image = cv2.imread(path)
-            window_name = 'image'
-            cv2.imshow(window_name, image)
-            cv2.waitKey(1000)
-        elif "quit" in ans:
-            exit()
-while gamestart == False:
-    menu_voice()
-
-def menu_main():
-    while gamestart == False:
-        menu_voice()
-menu_main()
