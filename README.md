@@ -9,7 +9,7 @@ Our technology uses advanced eye-tracking software to accurately capture a playe
 ## Demo
 [📺Youtube Demo](https://youtu.be/jkagCdjfl1k)
 
-[🌏Website Demo](https://youtu.be/jkagCdjfl1k)
+[🌏Website Demo](http://pupilpong.tech/)
 
 
 ## 🌐 About the Project
