@@ -1,5 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-# ❗️UPDATE - Received 2nd place award at HackKU 2023❗️
+# ❗️UPDATE - Received 2nd place award at HackKU 2023
 
 # 🏓 Pupil Pong - HackKU 2023 🏓
 
@@ -7,9 +7,11 @@ Welcome to [Pupil Pong](http://pupilpong.tech/), the revolutionary new version o
 
 Our technology uses advanced eye-tracking software to accurately capture a player's eye movements and translate them into real-time gameplay. This means that every move, every block, and every point is controlled entirely by the player's eyes.
 ## Demo
-[📺Youtube Demo](https://youtu.be/jkagCdjfl1k)
+[📺 Youtube Demo](https://youtu.be/jkagCdjfl1k)
 
-[🌏Website Demo](http://pupilpong.tech/)
+[🌏 Website Demo](http://pupilpong.tech/)
+
+[🌏 Devpost](https://devpost.com/software/pupil-pong)
 
 
 ## 🌐 About the Project
